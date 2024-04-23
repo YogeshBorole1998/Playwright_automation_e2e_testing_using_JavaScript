@@ -26,7 +26,7 @@ test("@SP Place the order", async ({ page }) => {
   await page.goto("https://rahulshettyacademy.com/client");
 
   // Temp Solution : Login Manually //
-  await page.pause();
+  // await page.pause();
 
   // Intercepting network requests using Playwright's page.route() method
   await page.route(

@@ -4,10 +4,16 @@
   "description": "PLAYWRIGHT - The Most trending Automation tool which is an tough competitor to Selenium & Cypress",
   "main": "index.js",
   "scripts": {
+    "vscode-debug": "playwright test --config ./playwright.config.js --workers=1",
+    "test:e2e": "npx playwright test e2e/",
     "regression": "npx playwright test",
-    "webTests": "npx playwright test --grep @Web",
-    "apiTests": "npx playwright test --grep @API",
-    "cucumberRegression": "npx cucumber-js --tags \"@Regression\" --retry 1 --exit --format html:cucumber-report.html"
+    "test:e2e:web": "npx playwright test --grep @Web",
+    "test:e2e:api": "npx playwright test --grep @API",
+    "cucumberRegression": "npx cucumber-js --tags \"@Regression\" --retry 1 --exit --format html:cucumber-report.html",
+    "test:feature1": "npx cucumber-js features/verify_table.feature",
+    "test:feature2": "npx cucumber-js features/Ecommerce.feature",
+    "test:feature3": "npx cucumber-js features/ErrorValidation.feature",
+    "test:feature4": "npx cucumber-js features/greeting.feature"
   },
   "keywords": [],
   "author": "Yogesh Borole",

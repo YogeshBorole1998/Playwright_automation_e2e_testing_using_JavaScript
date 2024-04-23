@@ -2,7 +2,7 @@
   "cookies": [
     {
       "name": "FTNT-EP-FG180FTK20900275",
-      "value": "tKWlpQZ3lO-npaWlgaWlpePx6_GI4PWI4-KUnZXj8e6XlZyVlZeSkIjQlJeRkZKSnJSSlA==",
+      "value": "tKWlpZdAxImnpaWlhqWlpePx6_GI4PWI4-KUnZXj8e6XlZyVlZeSkIjQkpGRk5SWlJKVpQ==",
       "domain": ".i.ibb.co",
       "path": "/",
       "expires": -1,
@@ -12,7 +12,7 @@
     },
     {
       "name": "FTNT-EP-FG180FTK20900275",
-      "value": "tKWlpbk6lO-kpaWloqWlpdzHytfKycCl",
+      "value": "tKWlpZ52xImkpaWloqWlpdzHytfKycCl",
       "domain": ".corp.capgemini.com",
       "path": "/",
       "expires": -1,
@@ -27,7 +27,7 @@
       "localStorage": [
         {
           "name": "token",
-          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mjc0MjU0OWUyNmI3ZTFhMTBlOWZjZTAiLCJ1c2VyRW1haWwiOiJyYWh1bHNoZXR0eUBnbWFpbC5jb20iLCJ1c2VyTW9iaWxlIjo5NTQzNjQ1NzU0LCJ1c2VyUm9sZSI6ImN1c3RvbWVyIiwiaWF0IjoxNzEzMjYwNzU4LCJleHAiOjE3NDQ4MTgzNTh9.RuTytHmCjDLioinpP3eMFHJqtG7WUsKGROP29MpHEV0"
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mjc0MjU0OWUyNmI3ZTFhMTBlOWZjZTAiLCJ1c2VyRW1haWwiOiJyYWh1bHNoZXR0eUBnbWFpbC5jb20iLCJ1c2VyTW9iaWxlIjo5NTQzNjQ1NzU0LCJ1c2VyUm9sZSI6ImN1c3RvbWVyIiwiaWF0IjoxNzEzODQ1MTE5LCJleHAiOjE3NDU0MDI3MTl9.OwQd3Hsac4FHVkrVMMSB7qe6dOmkrUwRtmDPQFn8cd4"
         }
       ]
     }

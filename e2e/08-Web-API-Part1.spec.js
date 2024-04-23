@@ -36,7 +36,7 @@ test("@API Place the order", async ({ page }) => {
   await page.goto("https://rahulshettyacademy.com/client");
 
   // Wait for navigation and pause for inspection - // Temp Solution : Login Manually //
-  await page.pause();
+  // await page.pause();
 
   // Click on the "My Orders" button
   await page.locator("button[routerlink*='myorders']").click();
