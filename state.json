@@ -1,33 +1,12 @@
 {
-  "cookies": [
-    {
-      "name": "FTNT-EP-FG180FTK20900275",
-      "value": "tKWlpZdAxImnpaWlhqWlpePx6_GI4PWI4-KUnZXj8e6XlZyVlZeSkIjQkpGRk5SWlJKVpQ==",
-      "domain": ".i.ibb.co",
-      "path": "/",
-      "expires": -1,
-      "httpOnly": true,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "FTNT-EP-FG180FTK20900275",
-      "value": "tKWlpZ52xImkpaWloqWlpdzHytfKycCl",
-      "domain": ".corp.capgemini.com",
-      "path": "/",
-      "expires": -1,
-      "httpOnly": true,
-      "secure": true,
-      "sameSite": "None"
-    }
-  ],
+  "cookies": [],
   "origins": [
     {
       "origin": "https://rahulshettyacademy.com",
       "localStorage": [
         {
           "name": "token",
-          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mjc0MjU0OWUyNmI3ZTFhMTBlOWZjZTAiLCJ1c2VyRW1haWwiOiJyYWh1bHNoZXR0eUBnbWFpbC5jb20iLCJ1c2VyTW9iaWxlIjo5NTQzNjQ1NzU0LCJ1c2VyUm9sZSI6ImN1c3RvbWVyIiwiaWF0IjoxNzEzODQ1MTE5LCJleHAiOjE3NDU0MDI3MTl9.OwQd3Hsac4FHVkrVMMSB7qe6dOmkrUwRtmDPQFn8cd4"
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mjc0MjU0OWUyNmI3ZTFhMTBlOWZjZTAiLCJ1c2VyRW1haWwiOiJyYWh1bHNoZXR0eUBnbWFpbC5jb20iLCJ1c2VyTW9iaWxlIjo5NTQzNjQ1NzU0LCJ1c2VyUm9sZSI6ImN1c3RvbWVyIiwiaWF0IjoxNzE0NzEzODA4LCJleHAiOjE3NDYyNzE0MDh9.QGoZPtEuJxA8XJPA59W8kCyBzQpV8vIq6MAKRthr7aw"
         }
       ]
     }

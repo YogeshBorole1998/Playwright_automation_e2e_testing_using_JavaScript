@@ -1,5 +1,5 @@
 // @ts-check
-const { defineConfig, devices } = require("@playwright/test");
+const { defineConfig, devices } = require('@playwright/test')
 
 /**
  * Read environment variables from file.
@@ -11,7 +11,7 @@ const { defineConfig, devices } = require("@playwright/test");
  * @see https://playwright.dev/docs/test-configuration
  */
 module.exports = defineConfig({
-  testDir: "./e2e",
+  testDir: './e2e',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -23,7 +23,7 @@ module.exports = defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: "html",
+  reporter: 'html',
   // reporter: [["html", { open: "always" }]],
   // reporter: [["html", { outputFolder: "my-report" }]],
   // reporter: "dot",
@@ -34,9 +34,9 @@ module.exports = defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: "on-first-retry",
+    trace: 'on-first-retry',
     /* Capture screenshot of failed test */
-    screenshot: "only-on-failure",
+    screenshot: 'only-on-failure',
 
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
@@ -44,13 +44,13 @@ module.exports = defineConfig({
     headless: false,
     ignoreHTTPSErrors: true,
     viewport: { width: 1280, height: 720 },
-    video: "on-first-retry",
+    video: 'on-first-retry'
   },
   /* Maximum time one test can run for. See https://playwright.dev/docs/test-timeouts */
   timeout: 30 * 1000,
   /* Maximum time expect() should wait for condition to be met. */
   expect: {
-    timeout: 5000,
+    timeout: 5000
   },
 
   /* Folder for test artifacts such as screenshots, videos, tarces, etc. */
@@ -59,19 +59,19 @@ module.exports = defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: "chromium",
+      name: 'chromium',
       use: {
-        ...devices["Desktop Chrome"],
+        ...devices['Desktop Chrome'],
         headless: false,
 
         // want to handle go-location
-        permissions: ["geolocation"],
+        permissions: ['geolocation'],
         // To handle SSL Certificate error Automatically
-        ignoreHTTPSErrors: true,
+        ignoreHTTPSErrors: true
         // To change the browser view
         // viewport: { width: 720, height: 720 },
-      },
-    },
+      }
+    }
 
     // {
     //   name: "firefox",
@@ -102,7 +102,7 @@ module.exports = defineConfig({
     //   name: "Google Chrome",
     //   use: { ...devices["Desktop Chrome"], channel: "chrome" },
     // },
-  ],
+  ]
 
   /* Run your local dev server before starting the tests */
   // webServer: {
@@ -110,4 +110,4 @@ module.exports = defineConfig({
   //   url: 'http://127.0.0.1:3000',
   //   reuseExistingServer: !process.env.CI,
   // },
-});
+})
