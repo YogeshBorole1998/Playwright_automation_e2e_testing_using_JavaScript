@@ -1,14 +1,9 @@
-// Importing necessary functions from Playwright's test module
 import { expect, test } from '@playwright/test'
 
-// Defining a test case named "Automate Speed Typewriting"
 test('Automate Speed Typewriting', async ({ page }) => {
   // Marking this test case as slow to increase its timeout
   test.slow()
-
-  // Navigating to the typing speed test website
   await page.goto('https://typing-speed-test.aoeu.eu/')
-
   // Waiting for the input area to appear on the page
   await page.waitForSelector('#input')
 
@@ -17,7 +12,7 @@ test('Automate Speed Typewriting', async ({ page }) => {
   console.log(`Total words: ${totalWords}`)
 
   // Iterating through each word on the page
-  for (let i = 0; i < totalWords; i++) {
+  for (let i = 0; i <= totalWords; i++) {
     // Finding the current word element on the page
     const wordElement = await page.locator('#currentword')
     // Extracting the text of the current word
@@ -26,11 +21,9 @@ test('Automate Speed Typewriting', async ({ page }) => {
     // Typing the current word into the input area and pressing Space
     await page.fill('#input', word)
     await page.keyboard.press('Space')
-
     // Logging the word that was typed
     console.log(`Typed word ${i + 1}: ${word}`)
   }
-
   // Finding the final message element which contains the test result
   const finalMessage = await page.locator('#result')
 

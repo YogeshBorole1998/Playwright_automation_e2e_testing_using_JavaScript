@@ -1,11 +1,8 @@
 import { expect, test } from '@playwright/test'
 
 test.describe('Alerts', () => {
-  test.beforeEach(async ({ page }) => {
-    await page.goto('https://demoqa.com/alerts')
-  })
-
   test('Simple alert', async ({ page }) => {
+    await page.goto('https://demoqa.com/alerts')
     page.on('dialog', async (dialog) => {
       await dialog.accept()
     })
@@ -13,6 +10,7 @@ test.describe('Alerts', () => {
   })
 
   test('Confirm alert', async ({ page }) => {
+    await page.goto('https://demoqa.com/alerts')
     page.on('dialog', async (dialog) => {
       await dialog.dismiss()
     })
@@ -23,6 +21,7 @@ test.describe('Alerts', () => {
   })
 
   test('Prompt alert', async ({ page }) => {
+    await page.goto('https://demoqa.com/alerts')
     page.on('dialog', async (dialog) => {
       await dialog.accept('Skillmea')
     })
