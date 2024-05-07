@@ -14,24 +14,28 @@
     "test:feature1": "npx cucumber-js features/verify_table.feature",
     "test:feature2": "npx cucumber-js features/Ecommerce.feature",
     "test:feature3": "npx cucumber-js features/ErrorValidation.feature",
-    "test:feature4": "npx cucumber-js features/greeting.feature"
+    "test:features:all": "npx cucumber-js features/"
   },
   "keywords": [],
   "author": "Yogesh Borole",
   "license": "ISC",
   "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
     "@playwright/test": "^1.43.1",
     "@types/node": "^20.8.9",
     "allure-playwright": "^2.15.1",
     "eslint": "^8.57.0",
+    "eslint-plugin-playwright": "^1.6.0",
     "globals": "^15.1.0"
   },
   "dependencies": {
     "@cucumber/cucumber": "^10.6.0",
+    "@types/winston": "^2.4.4",
     "chai": "^5.1.0",
     "cucumber-html-reporter": "^7.1.1",
     "exceljs": "^4.4.0",
     "playwright": "^1.43.1",
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "winston": "^3.13.0"
   }
 }

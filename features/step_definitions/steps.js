@@ -91,7 +91,7 @@ When('I fill the login form with valid credentials', async function () {
 })
 
 Then('I should see the home page', async function () {
-  const appLogo = await this.page.locator('.app_logo')
+  const appLogo = this.page.locator('.app_logo')
   await expect(appLogo).toBeVisible()
   await expect(appLogo).toContainText('Swag Labs')
   await expect(this.page).toHaveURL('https://www.saucedemo.com/inventory.html')

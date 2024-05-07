@@ -15,11 +15,11 @@ test('@Web Playwright special locators', async ({ page }) => {
   await page.getByRole('button', { name: 'Submit' }).click()
 
   // Get By Text to locate the element
-  expect(
-    await page
+  await expect(
+    page
       .getByText('Success! The Form has been submitted successfully!.')
-      .isVisible()
-  ).toBe(true)
+      
+  ).toBeVisible()
 
   // Get By Role to locate the element - role & name of that link
   await page.getByRole('link', { name: 'Shop' }).click()

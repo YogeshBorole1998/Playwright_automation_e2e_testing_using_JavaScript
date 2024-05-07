@@ -12,7 +12,7 @@ async function writeExcelTest(searchText, replaceText, change, filePath) {
 }
 
 async function readExcel(worksheet, searchText) {
-  let output = { row: -1, column: -1 }
+  const output = { row: -1, column: -1 }
   worksheet.eachRow((row, rowNumber) => {
     row.eachCell((cell, colNumber) => {
       if (cell.value === searchText) {

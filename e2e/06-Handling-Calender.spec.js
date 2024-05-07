@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test')
 
 test.describe('Playwright Handling Calendar tests', () => {
-  test(' @Web Calendar Validations', async ({ page }) => {
+  test('@Web Calendar Validations', async ({ page }) => {
     const year = '2028'
     const monthNumber = '4' // April is Month number 4 in the calendar
     const dayToSelect = '15'
@@ -28,7 +28,7 @@ test.describe('Playwright Handling Calendar tests', () => {
     // Click on the dat on the calender
     await page.locator('//abbr[text()=\'' + dayToSelect + '\']').click()
 
-    const inputs = await page.locator('.react-date-picker__inputGroup input') // value = "2024-04-14"
+    const inputs = page.locator('.react-date-picker__inputGroup input') // value = "2024-04-14"
     for (let index = 0; index < inputs.length; index++) {
       const value = inputs[index].getAttribute('value')
       expect(value).toEqual(expectedDate[index])

@@ -43,9 +43,9 @@ test.afterEach(async ({ page }, testInfo) => {
 // test.describe('Test Cases outline', () => {
 // test.describe.only('Only this test case will run', () => {
 test.describe.skip(
-  'This testcases inside this block is not execute, alss cases will be skipped ',
+  'This testcases inside this block is not execute, alss cases will be skipped',
   () => {
-    test('Test Scenario One', async () => {
+    test('Scenario One', async () => {
       await test.step('Step One', async () => {
         // ...
       })
@@ -57,7 +57,7 @@ test.describe.skip(
       // ...
     })
 
-    test('Test Scenario Two', async () => {
+    test('Scenario Two', async () => {
       // Arrange
       // Act
       // Assert

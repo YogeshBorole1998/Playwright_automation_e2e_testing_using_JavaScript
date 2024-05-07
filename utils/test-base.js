@@ -1,9 +1,9 @@
-const base = require("@playwright/test");
+const base = require('@playwright/test')
 
 exports.customtest = base.test.extend({
   testDataForOrder: {
-    username: "anshika@gmail.com",
-    password: "Iamking@000",
-    productName: "ADIDAS ORIGINAL",
+    username: 'anshika@gmail.com',
+    password: 'Iamking@000',
+    productName: 'ADIDAS ORIGINAL',
   },
-});
+})

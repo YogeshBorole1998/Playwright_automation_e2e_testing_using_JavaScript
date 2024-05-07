@@ -22,7 +22,7 @@ test('get started link', async ({ page }) => {
 
 test('Simple basic test', async ({ page }) => {
   await page.goto('https://www.example.com/')
-  const pageTitle = await page.locator('h1')
+  const pageTitle = page.locator('h1')
 
   await expect(pageTitle).toContainText('Example Domain')
 })
@@ -31,6 +31,6 @@ test('Click on Elements', async ({ page }) => {
   await page.goto('http://zero.webappsecurity.com/login.html')
   await page.getByText('Sign in').click()
 
-  const errorMsg = await page.locator('.alert-error')
+  const errorMsg = page.locator('.alert-error')
   await expect(errorMsg).toContainText('Login and/or password are wrong.')
 })

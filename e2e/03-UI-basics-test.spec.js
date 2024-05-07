@@ -69,7 +69,7 @@ test('@Web UI Controls', async ({ page }) => {
   await page.locator('#terms').click() // Agree to the terms and conditions
   await expect(page.locator('#terms')).toBeChecked()
   await page.locator('#terms').uncheck() // uncheck to the terms and conditions
-  expect(await page.locator('#terms').isChecked()).toBeFalsy()
+  await expect(page.locator('#terms')).not.toBeChecked()
 
   // check whether the link is blinking or not on UI
   await expect(documentLink).toHaveAttribute('class', 'blinkingText')

@@ -9,7 +9,7 @@ test('check Java page', async ({ page }) => {
   await expect(page).toHaveURL('https://playwright.dev/java/docs/intro')
   await expect(
     page.getByText('Installing Playwright', { exact: true })
-  ).not.toBeVisible()
+  ).toBeHidden()
   const javaDescription = 'Playwright is distributed as a set of Maven modules. The easiest way to use it is to add one dependency to your project\'s pom.xml as described below. If you\'re not familiar with Maven please refer to its documentation.'
   await expect(page.getByText(javaDescription)).toBeVisible()
 })

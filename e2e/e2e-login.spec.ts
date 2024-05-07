@@ -8,6 +8,9 @@ test.describe('Login/Logout Flow', () => {
 
   test('Negative Scenario for login', async ({ page }) => {
     await page.click('#signin_button')
+    await expect(page).toHaveTitle('Zero - Log in')
+    await expect(page).toHaveURL('http://zero.webappsecurity.com/login.html')
+    await expect(page).toHaveURL(/.*webappsecurity/)
     await page.fill('#user_login', 'invalid-user')
     await page.fill('#user_password', 'invalid-pass')
     await page.getByText('Sign in').click()
