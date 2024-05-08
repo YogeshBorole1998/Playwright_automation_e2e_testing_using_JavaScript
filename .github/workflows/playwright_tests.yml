@@ -1,7 +1,8 @@
 name: Playwright Tests
 on: [push]
 jobs:
-  test-e2e:
+  playwright-tests:
+    timeout-minutes: 60
     name: Run E2E tests
     runs-on: ubuntu-latest
     steps:
@@ -11,12 +12,10 @@ jobs:
           node-version: lts/*
       - name: Install dependencies
         run: npm ci
-      - name: Install Playwright
+      - name: Install Playwright browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
         run: npx playwright test ./e2e
-      - name: Run Playwright Tests with xvfb-run
-        run: xvfb-run npx playwright test
       - name: Upload test results
         uses: actions/upload-artifact@v4
         if: always()

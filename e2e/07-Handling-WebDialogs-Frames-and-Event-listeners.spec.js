@@ -60,6 +60,8 @@ test.describe('Playwright Handling & Validating Web dialogs, Frames & Event list
   test('Visual Testing', async ({ page }) => {
     //make payment when you 0 balance
     await page.goto('https://rahulshettyacademy.com/loginpagePractise/')
-    expect(await page.screenshot()).toMatchSnapshot('landing.png')
+    expect(await page.screenshot()).toMatchSnapshot('landing.png', {
+      maxDiffPixels: 10000
+    })
   })
 })

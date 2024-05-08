@@ -34,6 +34,7 @@ module.exports = {
     // Use 2 spaces for indentation
     indent: ['error', 2],
     // Require or disallow semicolons instead of ASI
-    semi: ['error', 'never']
+    semi: ['error', 'never'],
+    'playwright/no-networkidle': 'off'
   }
 }

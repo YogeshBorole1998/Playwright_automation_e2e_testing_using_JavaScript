@@ -42,7 +42,7 @@ module.exports = defineConfig({
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
 
-    headless: false,
+    headless: true,
     ignoreHTTPSErrors: true,
     viewport: { width: 1280, height: 720 },
     video: 'on-first-retry'
@@ -63,7 +63,7 @@ module.exports = defineConfig({
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
-        headless: false,
+        headless: true,
 
         // want to handle go-location
         permissions: ['geolocation'],

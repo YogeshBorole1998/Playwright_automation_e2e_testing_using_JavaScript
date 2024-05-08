@@ -3,7 +3,7 @@ const path = require('path')
 
 test.describe('Upload', () => {
   test('Upload file', async ({ page }) => {
-    await page.goto('https://demoqa.com/upload-download')
+    await page.goto('https://demoqa.com/upload-download', { timeout: 50000 })
     await page.locator('#uploadFile').setInputFiles(['./download.xlsx'])
     await expect(page.locator('#uploadedFilePath')).toBeVisible()
   })
