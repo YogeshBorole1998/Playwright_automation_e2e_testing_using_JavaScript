@@ -32,7 +32,9 @@ test.describe('Practice E-Commerce Site API Testing', () => {
     console.log(postResponseBody) // { title: 'Learn Playwright', completed: 'false', userId: '1', id: 201 }
   })
 
-  test('Submit Contact Form with Random Data using API', async ({ page }) => {
+  test('@API Submit Contact Form with Random Data using API', async ({
+    page
+  }) => {
     await page.goto('https://practice.sdetunicorns.com/contact/')
 
     //  fill out the input fields and submit - using fake or dummy data

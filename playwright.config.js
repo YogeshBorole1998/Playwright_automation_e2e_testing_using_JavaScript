@@ -64,7 +64,6 @@ module.exports = defineConfig({
       use: {
         ...devices['Desktop Chrome'],
         headless: true,
-
         // want to handle go-location
         permissions: ['geolocation'],
         // To handle SSL Certificate error Automatically

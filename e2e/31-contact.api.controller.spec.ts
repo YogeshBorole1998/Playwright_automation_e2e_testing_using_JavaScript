@@ -5,6 +5,7 @@ test.describe('Practice E-Commerce Site using API Controller Testing', () => {
   let randomPerson: APIResponse
 
   test.beforeAll(async () => {
+    // Initialize the API request context with a base URL
     await apiController.init()
     randomPerson = await apiController.getUsers()
 
@@ -15,7 +16,7 @@ test.describe('Practice E-Commerce Site using API Controller Testing', () => {
     console.log(createdUser) // { title: 'Learn Playwright', completed: 'false', userId: '1', id: 201 }
   })
 
-  test('Submit Contact Form with Random Data using API Controller', async ({
+  test('@API Submit Contact Form with Random Data using API Controller', async ({
     page
   }) => {
     await page.goto('https://practice.sdetunicorns.com/contact/')
