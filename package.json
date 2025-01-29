@@ -1,0 +1,42 @@
+{
+  "name": "playwright-udemy",
+  "version": "1.0.0",
+  "description": "PLAYWRIGHT - The Most trending Automation tool which is an tough competitor to Selenium & Cypress",
+  "main": "index.js",
+  "scripts": {
+    "jenkins-server": "java -jar jenkins.war --httpPort=4080 --enable-future-java",
+    "vscode-debug": "playwright test --config ./playwright.config.js --workers=1",
+    "test:e2e": "npx playwright test e2e/",
+    "regression": "npx playwright test",
+    "test:e2e:web": "npx playwright test --grep @Web",
+    "test:e2e:api": "npx playwright test --grep @API",
+    "cucumberRegression": "npx cucumber-js --tags \"@Regression\" --retry 1 --exit --format html:cucumber-report.html",
+    "test:feature1": "npx cucumber-js features/verify_table.feature",
+    "test:feature2": "npx cucumber-js features/Ecommerce.feature",
+    "test:feature3": "npx cucumber-js features/ErrorValidation.feature",
+    "test:features:all": "npx cucumber-js features/"
+  },
+  "keywords": [],
+  "author": "Yogesh Borole",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@playwright/test": "^1.50.0",
+    "@types/node": "^20.8.9",
+    "allure-playwright": "^2.15.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-playwright": "^1.6.0",
+    "faker": "^5.5.3",
+    "globals": "^15.1.0"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^10.6.0",
+    "@types/winston": "^2.4.4",
+    "chai": "^5.1.0",
+    "cucumber-html-reporter": "^6.0.0",
+    "exceljs": "^4.4.0",
+    "playwright": "^1.43.1",
+    "prettier": "^3.2.5",
+    "winston": "^3.13.0"
+  }
+}
