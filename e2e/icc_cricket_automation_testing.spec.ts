@@ -85,14 +85,15 @@ test.describe('ICC Cricket Website Automation Testing', () => {
     await page.click(
       "div[class='group relative nav-item-wrapper h-full inline-flex hidden lg:block false'] a[aria-label='Standings']"
     )
+
     //  Assert the total number of rows in the table
-    const totalRows = page.locator('.si-table-body .si-table-row')
+    const totalRows = page.locator('.w-full tbody tr')
     await expect(totalRows).toHaveCount(10)
 
     // Assert the css property of the elements 1px solid hsl(var(--hsl-pure-black)/0.1)
     await expect(totalRows.nth(3)).toHaveCSS(
       'border-bottom',
-      '1px solid rgb(51, 0, 117)'
+      '1px dotted rgb(50, 0, 115)'
     )
   })
 

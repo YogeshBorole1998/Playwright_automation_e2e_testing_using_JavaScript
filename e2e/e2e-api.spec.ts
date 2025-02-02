@@ -85,8 +85,8 @@ test.describe.parallel('API Testing & Validations - reqres.in', () => {
         }
       ],
       support: {
-        url: 'https://reqres.in/#support-heading',
-        text: 'To keep ReqRes free, contributions towards server costs are appreciated!'
+        url: 'https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_campaign=referral',
+        text: 'Tired of writing endless social media content? Let Content Caddy generate it for you.'
       }
     }
 

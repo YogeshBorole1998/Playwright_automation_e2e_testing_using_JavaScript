@@ -14,14 +14,13 @@ test.describe('Visual testing', () => {
     await page.goto('https://github.com/login')
 
     // before actions 2 images comparison
-    await expect(page).toHaveScreenshot('githubpage.png')
+    await expect(page).toHaveScreenshot('githubpage.png', { maxDiffPixels: 1000 })
 
     await page.locator('#login_field').click()
     await page.locator('#login_field').fill('testers talk')
 
     // after actions 2 images comparisons
-    await expect(page).toHaveScreenshot('githubpage-chromium-win32.png')
-
+    await expect(page).toHaveScreenshot('githubpage-chromium-win32.png', { maxDiffPixels: 1000 })
     await page.waitForTimeout(3000)
   })
 

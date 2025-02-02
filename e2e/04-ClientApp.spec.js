@@ -5,7 +5,7 @@ test('@Web Client App login - Verify Successful Purchase of ZARA COAT 3', async 
 }) => {
   //js file- Login js, DashboardPage
   const email = 'anshika@gmail.com'
-  const productName = 'ZARA COAT 3'
+  const productName = 'Banarsi Saree'
   const products = page.locator('.card-body')
 
   await page.goto('https://rahulshettyacademy.com/client')
@@ -39,7 +39,7 @@ test('@Web Client App login - Verify Successful Purchase of ZARA COAT 3', async 
 
   // Wait until the cart items are loaded and displayed - there is 4 li tag inside div but we want 1st so we use first.
   await page.locator('div li').first().waitFor()
-  const bool = await page.locator('h3:has-text(\'zara coat 3\')').isVisible()
+  const bool = await page.locator('h3:has-text(\'banarsi saree\')').isVisible()
   expect(bool).toBeTruthy()
   await page.locator('text=Checkout').click()
 

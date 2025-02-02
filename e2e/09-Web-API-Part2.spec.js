@@ -42,7 +42,7 @@ test('@API Test case 2', async () => {
   console.log(titles)
 })
 
-test.skip('@QA Client App login', async () => {
+test('@QA Client App login', async () => {
   //fail
   const email = 'rahulshetty@gmail.com'
   const productName = 'iphone 13 pro'

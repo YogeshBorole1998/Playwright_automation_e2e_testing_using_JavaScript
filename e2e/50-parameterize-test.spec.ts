@@ -16,10 +16,9 @@ for (const searchKeyword of testParameters) {
     await page.goto('https://www.youtube.com/')
 
     // search with keywords
-    await page.getByPlaceholder('Search').click()
-    await page.getByPlaceholder('Search').fill(searchKeyword)
-    await page.getByPlaceholder('Search').press('Enter')
-
+    await page.getByRole('combobox', { name: 'Search' }).click()
+    await page.getByRole('combobox', { name: 'Search' }).fill(searchKeyword)
+    await page.getByRole('combobox', { name: 'Search' }).press('Enter')
     await page.waitForTimeout(5000)
   })
 }
