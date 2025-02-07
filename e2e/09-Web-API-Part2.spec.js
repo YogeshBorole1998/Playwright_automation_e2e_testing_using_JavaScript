@@ -45,7 +45,7 @@ test('@API Test case 2', async () => {
 test('@QA Client App login', async () => {
   //fail
   const email = 'rahulshetty@gmail.com'
-  const productName = 'iphone 13 pro'
+  const productName = 'Banarsi Saree'
   const page = await webContext.newPage()
   await page.goto('https://rahulshettyacademy.com/client')
   const products = page.locator('.card-body')
@@ -61,7 +61,7 @@ test('@QA Client App login', async () => {
   }
   await page.locator('[routerlink*=\'cart\']').click()
   await page.locator('div li').first().waitFor()
-  const bool = await page.locator('h3:has-text(\'iphone 13 pro\')').isVisible()
+  const bool = await page.locator('h3:has-text(\'banarsi saree\')').isVisible()
   expect(bool).toBeTruthy()
   await page.locator('text=Checkout').click()
   await page.locator('[placeholder*=\'Country\']').type('ind', { delay: 100 })

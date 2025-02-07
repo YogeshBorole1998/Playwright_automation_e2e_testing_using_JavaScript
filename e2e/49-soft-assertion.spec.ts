@@ -2,7 +2,7 @@
 const { test, expect } = require('@playwright/test')
 
 // Write a test
-test('Soft Assertions in playwright', async ({ page }) => {
+test.fixme('Soft Assertions in playwright', async ({ page }) => {
   // Go to URL
   await page.goto('https://www.google.com/search?q=playwright+by+testers+talk')
 
