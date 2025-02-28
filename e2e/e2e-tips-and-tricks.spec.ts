@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test'
 
 test.describe('Advanced Tips & Tricks Section', () => {
   test('Test Info Object', async ({ page }, testInfo) => {
-    await page.goto('http://www.example.com')
+    await page.goto('https://www.google.com/')
     console.log(testInfo)
     console.log(testInfo.title) // TestInfo Object
     console.log(testInfo.status) // passed
@@ -16,7 +16,7 @@ test.describe('Advanced Tips & Tricks Section', () => {
     )
 
     // Proceed with test execution if the browser is not Firefox
-    await page.goto('http://www.example.com')
+    await page.goto('https://www.google.com/')
   })
 
   test('Test Fixme Annotation', async ({ page, browserName }) => {
@@ -27,7 +27,7 @@ test.describe('Advanced Tips & Tricks Section', () => {
     )
 
     // Proceed with test execution regardless of browser
-    await page.goto('http://www.example.com')
+    await page.goto('https://www.google.com/')
   })
 
   // Parametrized Tests :
@@ -44,7 +44,7 @@ test.describe('Advanced Tips & Tricks Section', () => {
   }
 
   test('Mouse Movement Simulation', async ({ page }) => {
-    await page.goto('http://www.example.com')
+    await page.goto('https://www.google.com/')
     await page.mouse.move(0, 0)
     await page.mouse.down()
     await page.mouse.move(0, 100)
@@ -54,9 +54,9 @@ test.describe('Advanced Tips & Tricks Section', () => {
   test('Multiple Browser Tabs inside one browser', async ({ browser }) => {
     const context = await browser.newContext()
     const page1 = await context.newPage()
-    await page1.goto('http://www.example.com')
+    await page1.goto('https://www.google.com/')
     const page2 = await context.newPage()
-    await page2.goto('http://www.example.com')
+    await page2.goto('https://www.google.com/')
     await page1.waitForTimeout(3000)
   })
 

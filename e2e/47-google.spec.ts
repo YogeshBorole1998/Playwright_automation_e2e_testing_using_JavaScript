@@ -2,7 +2,8 @@
 const { test, expect } = require('@playwright/test')
 
 // Write a test
-test('Google test using playwright', async ({ page }) => {
+// Skip Because of Captcha Handle Issue
+test.fixme('Google test using playwright', async ({ page }) => {
   // Go to URL
   await page.goto('https://www.google.com/search?q=playwright+by+testers+talk')
   await page.waitForTimeout(2000)

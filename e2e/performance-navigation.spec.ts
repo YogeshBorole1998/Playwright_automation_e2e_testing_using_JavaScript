@@ -1,12 +1,12 @@
 import { test } from '@playwright/test'
 
 test('basic performance navigation', async ({ page }) => {
-    await page.goto('https://danube-web.shop/')
+  await page.goto('https://danube-web.shop/')
 
-    const navigationTimingJson = await page.evaluate(() =>
-        JSON.stringify(performance.getEntriesByType('navigation'))
-    )
+  const navigationTimingJson = await page.evaluate(() =>
+    JSON.stringify(performance.getEntriesByType('navigation'))
+  )
 
-    const navigationTiming = JSON.parse(navigationTimingJson)
-    console.log(navigationTiming)
+  const navigationTiming = JSON.parse(navigationTimingJson)
+  console.log(navigationTiming)
 })

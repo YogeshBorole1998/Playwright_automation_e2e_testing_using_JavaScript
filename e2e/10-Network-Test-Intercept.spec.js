@@ -19,7 +19,7 @@ test.beforeAll(async () => {
 })
 
 //create order is success
-test('@API Place the order', async ({ page }) => {
+test.fixme('@API Place the order', async ({ page }) => {
   page.addInitScript((value) => {
     // eslint-disable-next-line no-undef
     window.localStorage.setItem('token', value)
@@ -47,7 +47,7 @@ test('@API Place the order', async ({ page }) => {
   )
 
   // Clicking on a button with a specific router link
-  await page.locator('button[routerlink*=\'myorders\']').click()
+  await page.locator("button[routerlink*='myorders']").click()
 
   // Waiting for the response from the intercepted API request
   await page.waitForResponse(

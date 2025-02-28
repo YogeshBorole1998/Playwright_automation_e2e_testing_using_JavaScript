@@ -2,7 +2,8 @@
 const { test, expect } = require('@playwright/test')
 
 // Write a test
-test('Keyboard actions in playwright', async ({ page }) => {
+// Skip Because of Captcha Handle Issue
+test.fixme('Keyboard actions in playwright', async ({ page }) => {
   // Go to URL
   await page.goto('https://www.google.com/')
 

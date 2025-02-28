@@ -26,7 +26,7 @@ test.describe('Playwright Handling Calendar tests', () => {
       .click()
 
     // Click on the dat on the calender
-    await page.locator('//abbr[text()=\'' + dayToSelect + '\']').click()
+    await page.locator("//abbr[text()='" + dayToSelect + "']").click()
 
     const inputs = page.locator('.react-date-picker__inputGroup input') // value = "2024-04-14"
     for (let index = 0; index < inputs.length; index++) {

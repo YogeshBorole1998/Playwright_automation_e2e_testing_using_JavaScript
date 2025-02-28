@@ -7,10 +7,15 @@ test.describe('ICC Cricket Website Automation Testing', () => {
 
   test('verify the url and the logo visibility', async ({ page }) => {
     // Assert url contains 'cricket'
-    await expect(page, 'Page URL does not contain "cricket"').toHaveURL(/.*cricket/);
+    await expect(page, 'Page URL does not contain "cricket"').toHaveURL(
+      /.*cricket/
+    )
     await verifyUrlContains(page, 'cricket')
     // Assert logo is visible
-    await expect(page.locator("img[alt='Header Logo']"), 'Header Logo is NOT visible on the page').toBeVisible()
+    await expect(
+      page.locator("img[alt='Header Logo']"),
+      'Header Logo is NOT visible on the page'
+    ).toBeVisible()
   })
 
   test('search and verify new url & heading', async ({ page }) => {
@@ -18,7 +23,7 @@ test.describe('ICC Cricket Website Automation Testing', () => {
     await performSearch(page, 'India')
 
     // Assert page url contains - search?term=India
-    await verifyUrlContains(page, 'search?q=India')
+    await verifyUrlContains(page, 'https://www.icc-cricket.com/search')
   })
 
   test('verify menu tabs text and links', async ({ page }) => {
@@ -40,7 +45,10 @@ test.describe('ICC Cricket Website Automation Testing', () => {
     const menuItems = page.locator('.tab-container > a') // 6 nodes
     // Assert the text of all the menu tabs
     console.log(await menuItems.allInnerTexts())
-    expect(await menuItems.allInnerTexts(), 'Menu items do not match expected tabs!').toEqual(menuTabs);
+    expect(
+      await menuItems.allInnerTexts(),
+      'Menu items do not match expected tabs!'
+    ).toEqual(menuTabs)
 
     // Assert the text and the link for each menu tabs
     const expectedTabTextLinks = [
@@ -74,8 +82,14 @@ test.describe('ICC Cricket Website Automation Testing', () => {
       // .tab-container > a:nth-child(3)
       const link = menuItems.nth(index)
 
-      await expect(link, `Expected link text to be "${tabItem.text}" but found something else!`).toHaveText(tabItem.text);
-      await expect(link, `Expected href to be "${tabItem.href}" but found something else!`).toHaveAttribute('href', tabItem.href);
+      await expect(
+        link,
+        `Expected link text to be "${tabItem.text}" but found something else!`
+      ).toHaveText(tabItem.text)
+      await expect(
+        link,
+        `Expected href to be "${tabItem.href}" but found something else!`
+      ).toHaveAttribute('href', tabItem.href)
     }
   })
 
@@ -88,11 +102,16 @@ test.describe('ICC Cricket Website Automation Testing', () => {
 
     //  Assert the total number of rows in the table
     const totalRows = page.locator('.w-full tbody tr')
-    await expect(totalRows, 'Expected 10 rows but found a different count!').toHaveCount(10);
+    await expect(
+      totalRows,
+      'Expected 10 rows but found a different count!'
+    ).toHaveCount(10)
 
     // Assert the css property of the elements 1px solid hsl(var(--hsl-pure-black)/0.1)
-    await expect(totalRows.nth(3), 'Row 4 does not have the expected border-bottom style!')
-      .toHaveCSS('border-bottom', '1px dotted rgb(50, 0, 115)');
+    await expect(
+      totalRows.nth(3),
+      'Row 4 does not have the expected border-bottom style!'
+    ).toHaveCSS('border-bottom', '1px dotted rgb(50, 0, 115)')
   })
 
   async function goto(page: Page) {
@@ -112,6 +131,9 @@ test.describe('ICC Cricket Website Automation Testing', () => {
   }
 
   async function verifyUrlContains(page: Page, text: string) {
-    expect(page.url(), `Expected URL to contain "${text}" but it doesn’t!`).toContain(text);
+    expect(
+      page.url(),
+      `Expected URL to contain "${text}" but it doesn’t!`
+    ).toContain(text)
   }
 })

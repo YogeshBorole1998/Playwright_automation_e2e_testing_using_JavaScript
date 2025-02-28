@@ -5,11 +5,11 @@ test('@API Security test request intercept', async ({ page }) => {
   await page.goto('https://rahulshettyacademy.com/client')
   await page.locator('#userEmail').fill('anshika@gmail.com')
   await page.locator('#userPassword').type('Iamking@000')
-  await page.locator('[value=\'Login\']').click()
+  await page.locator("[value='Login']").click()
   await page.waitForLoadState('networkidle')
   await page.locator('.card-body b').first().waitFor()
 
-  await page.locator('button[routerlink*=\'myorders\']').click()
+  await page.locator("button[routerlink*='myorders']").click()
   // Intercepting network requests using Playwright's page.route() method
   await page.route(
     // Intercepting requests to get order details API endpoint
@@ -23,7 +23,7 @@ test('@API Security test request intercept', async ({ page }) => {
   )
 
   // Clicking on the first button element that contains the text 'View'
-  await page.locator('button:has-text(\'View\')').first().click()
+  await page.locator("button:has-text('View')").first().click()
 
   // Waiting for the last 'p' element and expecting it to have specific text
   await expect(page.locator('p').last()).toHaveText(

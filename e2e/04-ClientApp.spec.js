@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable playwright/no-conditional-in-test */
 const { test, expect } = require('@playwright/test')
 
 test('@Web Client App login - Verify Successful Purchase of ZARA COAT 3', async ({
@@ -5,13 +7,13 @@ test('@Web Client App login - Verify Successful Purchase of ZARA COAT 3', async 
 }) => {
   //js file- Login js, DashboardPage
   const email = 'anshika@gmail.com'
-  const productName = 'Banarsi Saree'
+  const productName = 'IPHONE 13 PRO' // Note : If Fail Please Check Product Available
   const products = page.locator('.card-body')
 
   await page.goto('https://rahulshettyacademy.com/client')
   await page.locator('#userEmail').fill(email)
   await page.locator('#userPassword').fill('Iamking@000')
-  await page.locator('[value=\'Login\']').click()
+  await page.locator("[value='Login']").click()
   // Wait until all the api calls are made in network tab. 'networkidle' means wait until the network comes to idle state.
   await page.waitForLoadState('networkidle')
   // OR : Alternate way - simply wait for first element to be visible.
@@ -34,12 +36,12 @@ test('@Web Client App login - Verify Successful Purchase of ZARA COAT 3', async 
     }
   }
 
-  await page.locator('[routerlink*=\'cart\']').click()
+  await page.locator("[routerlink*='cart']").click()
   // await page.pause();
 
   // Wait until the cart items are loaded and displayed - there is 4 li tag inside div but we want 1st so we use first.
   await page.locator('div li').first().waitFor()
-  const bool = await page.locator('h3:has-text(\'banarsi saree\')').isVisible()
+  const bool = await page.locator(`h3:has-text("${productName}")`).isVisible()
   expect(bool).toBeTruthy()
   await page.locator('text=Checkout').click()
 
@@ -48,7 +50,7 @@ test('@Web Client App login - Verify Successful Purchase of ZARA COAT 3', async 
    * relies on keyboard events to trigger the suggestions. Therefore, using type() is the appropriate choice to ensure that the autocomplete suggestions
    * are properly triggered during automation.
    */
-  await page.locator('[placeholder*=\'Country\']').type('ind')
+  await page.locator("[placeholder*='Country']").type('ind')
   // Select India as a country from the Auto-suggestion Dropdown
   const dropdown = page.locator('.ta-results')
   await dropdown.waitFor() // Wait until the autocomplete results are loaded
@@ -62,7 +64,9 @@ test('@Web Client App login - Verify Successful Purchase of ZARA COAT 3', async 
     }
   }
 
-  await expect(page.locator('.user__name [type=\'text\']').first()).toHaveText(email)
+  await expect(page.locator(".user__name [type='text']").first()).toHaveText(
+    email
+  )
   await page.locator('.action__submit').click() // click on Place Order Button
   await expect(page.locator('.hero-primary')).toHaveText(
     ' Thankyou for the order. '
@@ -73,7 +77,7 @@ test('@Web Client App login - Verify Successful Purchase of ZARA COAT 3', async 
   console.log(orderId) // 661b717da86f8f74dcc0cc17
 
   // Click on orders on top right to go back to dashboard and check whether the new order appears or not
-  await page.locator('button[routerlink*=\'myorders\']').click()
+  await page.locator("button[routerlink*='myorders']").click()
   await page.locator('tbody').waitFor()
   const rows = page.locator('tbody tr')
 

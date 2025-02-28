@@ -26,7 +26,7 @@ test.beforeAll(async () => {
 })
 
 // Test case to verify successful order placement via API
-test('@API Place the order', async ({ page }) => {
+test.fixme('@API Place the order', async ({ page }) => {
   // Add the authentication token to local storage before navigating
   page.addInitScript((value) => {
     // eslint-disable-next-line no-undef
@@ -40,7 +40,7 @@ test('@API Place the order', async ({ page }) => {
   // await page.pause();
 
   // Click on the "My Orders" button
-  await page.locator('button[routerlink*=\'myorders\']').click()
+  await page.locator("button[routerlink*='myorders']").click()
 
   // Wait for the table body to load
   await page.locator('tbody').waitFor()

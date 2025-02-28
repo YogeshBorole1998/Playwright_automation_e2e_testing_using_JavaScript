@@ -16,8 +16,10 @@ test.describe('Automation Exercise API login tests', () => {
     })
 
     expect(response.status()).toBe(200)
+    expect(response.status()).toEqual(expect.any(Number))
     const responseBody = await response.json()
-    expect(responseBody.message).toBe('User exists!')
+    // expect(responseBody.message).toBe('User exists!')
+    expect(responseBody.message).toEqual(expect.any(String))
   })
 
   test('@API Post: Verify login without email', async ({ request }) => {

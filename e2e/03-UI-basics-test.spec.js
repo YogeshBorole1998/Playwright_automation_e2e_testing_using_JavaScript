@@ -16,11 +16,11 @@ test('@Web Browser Context-Validating Error login', async ({ browser }) => {
   const userName = page.locator('#username') // Rel CSS Selector - id
   const signIn = page.locator('#signInBtn') // Rel CSS Selector - id
   await userName.fill('rahulshetty')
-  await page.locator('[type=\'password\']').fill('learning') // Based on any attribute i.e. [attribute='value']
+  await page.locator("[type='password']").fill('learning') // Based on any attribute i.e. [attribute='value']
   await signIn.click()
 
-  console.log(await page.locator('[style*=\'block\']').textContent()) // Incorrect username/password.
-  await expect(page.locator('[style*=\'block\']')).toContainText('Incorrect') // Verify Wrong Login Details.
+  console.log(await page.locator("[style*='block']").textContent()) // Incorrect username/password.
+  await expect(page.locator("[style*='block']")).toContainText('Incorrect') // Verify Wrong Login Details.
 
   //type - fill
   await userName.fill('') // clear existing content inside username field
@@ -55,7 +55,7 @@ test('@Web Browser Context-Validating Error login', async ({ browser }) => {
 
 test('@Web UI Controls', async ({ page }) => {
   await page.goto('https://rahulshettyacademy.com/loginpagePractise/')
-  const documentLink = page.locator('[href*=\'documents-request\']')
+  const documentLink = page.locator("[href*='documents-request']")
   const dropdown = page.locator('select.form-control')
 
   await dropdown.selectOption('consult')
@@ -80,7 +80,7 @@ test('Child windows handling', async ({ browser }) => {
   const page = await context.newPage()
 
   await page.goto('https://rahulshettyacademy.com/loginpagePractise/')
-  const documentLink = page.locator('[href*=\'documents-request\']')
+  const documentLink = page.locator("[href*='documents-request']")
 
   /* If you give : await documentLink.click(); it will open in new window/page but our scope is only single page, 
      our page variable do not have any knowledge obout new page.
@@ -139,7 +139,7 @@ test('@Web Browser Context - Validating Login Functionality', async ({
 
   await page.goto('https://rahulshettyacademy.com/loginpagePractise/')
   await userName.fill('rahulshettyacademy')
-  await page.locator('[type=\'password\']').fill('learning')
+  await page.locator("[type='password']").fill('learning')
   await signIn.click()
   // await page.pause();
 })

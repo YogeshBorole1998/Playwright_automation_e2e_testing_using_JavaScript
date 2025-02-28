@@ -1,0 +1,10 @@
+✳ Ban Flaky test using this Command : 
+npx playwright test e2e/01-example.spec.js --repeat-each 10
+npx playwright test --repeat-each 10 --only-changed
+npx playwright test --repeat-each 10 --only-changed=main
+
+✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳✳
+
+
+
+✳◼🔸🔸🔸🔷

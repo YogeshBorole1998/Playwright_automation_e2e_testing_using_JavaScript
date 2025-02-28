@@ -13,7 +13,8 @@ test.describe('Mouse', () => {
   })
 
   // Write a test
-  test('Mouse actions in playwright', async ({ page }) => {
+  // Skip Because of Captcha Handle Issue
+  test.fixme('Mouse actions in playwright', async ({ page }) => {
     // Go to URL
     await page.goto('https://www.google.com/search?q=testers+talk')
 

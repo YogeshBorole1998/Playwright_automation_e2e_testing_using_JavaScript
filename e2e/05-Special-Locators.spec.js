@@ -16,9 +16,7 @@ test('@Web Playwright special locators', async ({ page }) => {
 
   // Get By Text to locate the element
   await expect(
-    page
-      .getByText('Success! The Form has been submitted successfully!.')
-      
+    page.getByText('Success! The Form has been submitted successfully!.')
   ).toBeVisible()
 
   // Get By Role to locate the element - role & name of that link
